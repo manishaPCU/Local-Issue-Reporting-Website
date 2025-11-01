@@ -1,0 +1,651 @@
+.App { 
+  text-align: center; 
+} 
+html, body
+ { margin: 0;
+   padding: 0;
+    height: 100%;
+     overflow: hidden; /* prevents scrolling */
+     } 
+     /* Home page background */
+
+.background {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  background: linear-gradient(135deg, #101820, #1a1f25, #222b33);
+  color: #e0f7fa;
+}
+
+.background::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(79, 195, 247, 0.25), transparent 70%);
+  top: -100px;
+  left: -150px;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.login-link, .signup-link {
+  position: absolute;
+  font-size: 14px;
+  text-decoration: none;
+  color: #4fc3f7;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-link {
+  top: 30px;
+  right: 40px;
+}
+
+.signup-link {
+  top: 30px;
+  right: 130px;
+}
+
+.login-link:hover, .signup-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  transform: scale(1.08);
+  color: #81d4fa;
+}
+
+.left {
+  position: absolute;
+  right: 50%;
+  top: 25%;
+}
+
+.left h2 {
+  position: relative;
+  top: 20%;
+  right: 53%;
+  color: #e0f7fa;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.left h5 {
+  position: relative;
+  right: 47%;
+  color: #b0bec5;
+  text-align: center;
+  width: 80%;
+}
+
+.leftButton {
+  background: #4fc3f7;
+  color: #0d1b22;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.4);
+  padding: 12px 24px;
+  margin-right: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.leftButton:hover {
+  background: #81d4fa;
+  box-shadow: 0 0 25px rgba(79, 195, 247, 0.7);
+  transform: translateY(-3px);
+}
+
+#c {
+  position: relative;
+  top: 45%;
+  right: 35%;
+  width: 50%;
+}
+
+#d {
+  position: absolute;
+  right: 81%;
+  top: 200px;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+}
+
+.right {
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  width: 85%;
+  height: auto;
+}
+
+.right-img {
+  width: 68%;
+  height: auto;
+  max-height: 80vh;
+  transform: translateX(8%);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(79, 195, 247, 0.2);
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+}
+
+
+/* SIGN-UP PAGE STYLING          */
+
+.signup-background {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.signup-container {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 40px 50px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.8s ease;
+}
+
+.signup-container h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.signup-container h4 {
+  margin-bottom: 25px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signup-form input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.signup-form input:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #d3ae27, #489eb9);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(90deg, #9f86c0, #c77dff);
+}
+
+.signup-footer {
+  margin-top: 18px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signup-footer a {
+  color: #ffcc70;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.signup-footer a:hover {
+  color: #d3ae27;
+}
+                         
+                         
+ /* SIGN-IN PAGE STYLING */
+
+.signin-background {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.signin-container {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 40px 50px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.8s ease;
+}
+
+.signin-container h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.signin-container h4 {
+  margin-bottom: 25px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signin-form input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.signin-form input:focus {
+  border-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.signin-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg,  #d3ae27, #489eb9);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signin-form button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(90deg,#9f86c0, #c77dff);
+}
+
+.signin-footer {
+  margin-top: 18px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signin-footer a {
+  color: #ffcc70;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.signin-footer a:hover {
+  color: #d3ae27;
+}
+
+/* Report Issue Page */
+
+.report-background {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #230864);
+  min-height: 100vh;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.top-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 88.3%;
+  height: 70px; 
+  background: rgba(198, 197, 193, 0.8);
+  color: #ffcc70;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* header text and links */
+.top-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header-links a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-links a:hover {
+  color: #d3ae27;
+}
+
+
+.report-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 60px;
+  width: 70%;
+  max-width: 650px;
+  box-shadow: 0 0 25px rgba(22, 8, 54, 0.4);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease;
+  margin-top: 90px;
+}
+
+.report-container h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(90deg,  #d3ae27, #489eb9);
+  
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.report-container p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 35px;
+  font-size: 1.1rem;
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.report-form label {
+  text-align: left;
+  font-weight: 600;
+  color: #ffcc70;
+  letter-spacing: 0.5px;
+}
+
+.report-form input,
+.report-form textarea,
+.report-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.report-form input:focus,
+.report-form textarea:focus,
+.report-form select:focus {
+  border-color: #f72585;
+  box-shadow: 0 0 8px #f72585;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.report-form textarea {
+  resize: none;
+}
+
+.report-form button {
+  background: #b2c37b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  max-width: 500px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(159, 134, 192, 0.3);
+
+  display: block;        
+  margin: 20px auto 0;   
+}
+
+.report-form button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #9f86c0, #c77dff);
+  box-shadow: 0 0 12px rgba(199, 125, 255, 0.4);
+}
+
+/* Subtle entry animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* EXPLORE ISSUE PAGE STYLING    */
+
+.explore-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #230864);
+  color: #fff;
+}
+
+/*  Scrollable section */
+.explore-scrollable {
+  flex: 1;
+  overflow-y: auto !important;
+  padding-bottom: 60px;
+}
+
+.explore-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+.explore-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.explore-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/*  Header styling */
+.explore-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 88%;
+  background: rgba(198, 197, 193, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 60px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.explore-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffcc70;
+}
+
+.explore-links a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.explore-links a:hover {
+  color: #d3ae27;
+}
+
+/*  Content container */
+.explore-container {
+  margin-top: 110px;
+  padding: 40px;
+  width: 80%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 0.8s ease;
+}
+
+/*  Issue cards */
+.issue-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  padding: 25px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.issue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2);
+}
+
+.issue-card h3 {
+  color: #ffcc70;
+  margin-bottom: 8px;
+}
+
+.issue-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*  Votes */
+.votes button {
+  background: linear-gradient(90deg, #d3ae27, #489eb9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.votes button:hover {
+  background: linear-gradient(90deg, #9f86c0, #c77dff);
+  transform: scale(1.05);
+}
+
+/*  Comments section */
+.comments {
+  margin-top: 18px;
+}
+
+.comments input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  outline: none;
+  margin-right: 10px;
+}
+
+.comments input:focus {
+  border-color: #ffcc70;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.comments button {
+  padding: 8px 12px;
+  background: #ffcc70;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.comments button:hover {
+  background-color: #d3ae27;
+  transform: scale(1.05);
+}
+
+/*  Simple fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
